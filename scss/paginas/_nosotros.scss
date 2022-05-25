@@ -1,0 +1,100 @@
+body{
+
+    .titulo_nosotros {
+        color: #eeeeee;
+        font-family: 'Project Sans';
+        font-weight: 700;
+        font-size: 50px;
+        margin: 16px;
+    }
+
+    background-color: #484c54;
+   
+
+    .grid_nosotros{
+        width: 100%;
+        font-size: 15px;
+        background-color: #eeeeee;;
+        border-radius: 50px;
+        box-shadow: 12px -20px 46px -26px rgba(33,33,33,0.66);
+    -webkit-box-shadow: 12px -20px 46px -26px rgba(33,33,33,0.66);
+    -moz-box-shadow: 12px -20px 46px -26px rgba(33,33,33,0.66);
+    }
+
+    
+    .grid_nosotros {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 70px 60px 60px;
+    padding: 3em;
+ }
+
+
+    p{
+        color: #484c54;
+        font-family: 'Project Sans';
+        font-weight: 400;
+        grid-column: 1/4;
+        font-size: 20px;
+    }
+
+    .boton {
+        background-color: #484c54;
+        border-radius: 12px;
+        border: #484c54;
+        color: #eeeeee;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-family: 'Project Sans';
+        font-weight: 500;
+        font-size: 16px;
+        -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+        -webkit-box-shadow: -3px 2px 11px 5px rgba(38,38,38,0.44); 
+    box-shadow: -3px 2px 11px 5px rgba(38,38,38,0.44);
+        grid-column: 1/2;
+    }
+
+    .boton:hover {
+        background-color: #eeeeee;
+        color: #484c54;
+    } 
+
+
+    @media only screen and (max-width: 780px) {
+
+        .grid_nosotros{
+            width: 700px;
+            height: 85vh;
+            font-size: 15px;
+            background-color: #eeeeee;;
+            border-radius: 50px;
+            box-shadow: 12px -20px 46px -26px rgba(33,33,33,0.66);
+        -webkit-box-shadow: 12px -20px 46px -26px rgba(33,33,33,0.66);
+        -moz-box-shadow: 12px -20px 46px -26px rgba(33,33,33,0.66);
+        }
+
+        .grid_nosotros {
+
+            display: grid;
+            grid-template-columns: 100px 60px;
+            grid-template-rows: 150px 60px;
+        }
+
+        .boton_nosotros {
+            display: grid;
+            grid-column: 1/4;
+        }
+
+
+    
+    }
+
+
+
+
+    
+}
+

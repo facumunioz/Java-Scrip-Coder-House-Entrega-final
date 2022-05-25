@@ -1,0 +1,93 @@
+
+/* mixin */
+@mixin boxshadow ($boxshadow) {
+    width: 300px;
+    background-color: #484c54;
+    border: 7px solid #484c54;
+    border-radius: 30px;
+    -webkit-box-shadow: 1px -2px 10px 5px rgba(0,0,0,0.2); 
+box-shadow: 1px -2px 10px 5px rgba(0,0,0,0.2); 
+    
+}
+
+@mixin botonprincipal ($botonprincipal) {
+    width: 300px;
+    background-color: #484c54;
+    border: 7px solid #484c54;
+    border-radius: 30px;
+    -webkit-box-shadow: 1px -2px 10px 5px rgba(0,0,0,0.2); 
+box-shadow: 1px -2px 10px 5px rgba(0,0,0,0.2);
+}
+    
+
+
+ /* maps */
+
+ $colores: (
+  primario: #484c54,
+  segundario:#eeeeee,
+  terciario: #0092cb
+ )
+
+/* $fuentes: (
+
+    extralight: @font-face {
+        font-family: 'Project Sans';
+        src: url('ProjectSans-ExtraLight.eot');
+        src: local('Project Sans ExtraLight'), local('ProjectSans-ExtraLight'),
+            url('ProjectSans-ExtraLight.eot?#iefix') format('embedded-opentype'),
+            url('ProjectSans-ExtraLight.woff2') format('woff2'),
+            url('ProjectSans-ExtraLight.woff') format('woff'),
+            url('ProjectSans-ExtraLight.ttf') format('truetype');
+        font-weight: 200;
+        font-style: normal;
+    }
+
+    light: @font-face {
+        font-family: 'Project Sans';
+        src: url('ProjectSans-Light.eot');
+        src: local('Project Sans Light'), local('ProjectSans-Light'),
+            url('ProjectSans-Light.eot?#iefix') format('embedded-opentype'),
+            url('ProjectSans-Light.woff2') format('woff2'),
+            url('ProjectSans-Light.woff') format('woff'),
+            url('ProjectSans-Light.ttf') format('truetype');
+        font-weight: 300;
+        font-style: normal;
+    }
+
+
+    medium: @font-face {
+        font-family: 'Project Sans';
+        src: url('ProjectSans-Medium.eot');
+        src: local('Project Sans Medium'), local('ProjectSans-Medium'),
+            url('ProjectSans-Medium.eot?#iefix') format('embedded-opentype'),
+            url('ProjectSans-Medium.woff2') format('woff2'),
+            url('ProjectSans-Medium.woff') format('woff'),
+            url('ProjectSans-Medium.ttf') format('truetype');
+        font-weight: 500;
+        font-style: normal;
+    }
+    
+    bold: @font-face {
+        font-family: 'Project Sans';
+        src: url('ProjectSans-Bold.eot');
+        src: local('Project Sans Bold'), local('ProjectSans-Bold'),
+            url('ProjectSans-Bold.eot?#iefix') format('embedded-opentype'),
+            url('ProjectSans-Bold.woff2') format('woff2'),
+            url('ProjectSans-Bold.woff') format('woff'),
+            url('ProjectSans-Bold.ttf') format('truetype');
+        font-weight: bold;
+        font-style: normal;
+    }
+
+
+
+)*/
+
+ /* Extend 
+
+ %fontytamaño{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+}*/

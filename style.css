@@ -1,0 +1,70 @@
+/* Contacto Pagina */
+.backgroundcontacto{
+    background-color: #484c54;
+    color: #eeeeee;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+}
+.secctioncontacto{
+    background-color: #eeeeee;
+    color: #484c54;
+    height: 110vh;
+    border-radius: 30px;
+    padding: 10vh;
+    padding-left: 10px;
+    box-shadow: 12px -20px 46px -26px rgba(33,33,33,0.66);
+-webkit-box-shadow: 12px -20px 46px -26px rgba(33,33,33,0.66);
+-moz-box-shadow: 12px -20px 46px -26px rgba(33,33,33,0.66);
+}
+
+/*@media only screen and (max-width: 780px) {
+    .menu{
+        list-style-type: none;
+        text-decoration: none;
+        margin: 30px;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        
+    }
+    .caracteristicas0{
+        flex-direction: column;
+        align-items: center;
+    }
+    nav{
+        width: 69%;
+        display: inline-block;
+    }
+    footer{
+        background-color: #484c54;
+        border-radius: 30px;
+        color: #eeeeee;
+        font-size: 15px;
+        font-family: 'Open Sans', sans-serif;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 95vh;
+        }
+    .divlogofooter{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+    .divelementosfooter{
+        padding-left: 10px;
+    }
+    .titulofooterredes{
+        padding-left: 10px;
+    }
+    .icono-lista{
+
+        padding-left: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content:center;
+        }
+}

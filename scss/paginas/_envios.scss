@@ -1,0 +1,38 @@
+body {
+    .background_envios {
+        width: 100%;
+        font-size: 15px;
+        background-color: #eeeeee;;
+        border-radius: 50px;
+        box-shadow: 12px -20px 46px -26px rgba(33,33,33,0.66);
+    -webkit-box-shadow: 12px -20px 46px -26px rgba(33,33,33,0.66);
+    -moz-box-shadow: 12px -20px 46px -26px rgba(33,33,33,0.66);
+    }
+
+    .envios {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 100px;
+    }
+
+    @media only screen and (max-width: 780px) {
+
+        .medidas{
+            .envios {
+                display: grid;
+                grid-template-columns: auto;
+                grid-template-rows: auto 100px;
+                justify-content: center;
+
+            }
+
+    
+        }
+
+
+        
+
+     }   
+
+
+}

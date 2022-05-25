@@ -1,0 +1,16 @@
+
+body {
+    .contacto {
+        width: 100%;
+        font-size: 15px;
+        background-color: #eeeeee;;
+        border-radius: 50px;
+        box-shadow: 12px -20px 46px -26px rgba(33,33,33,0.66);
+    -webkit-box-shadow: 12px -20px 46px -26px rgba(33,33,33,0.66);
+    -moz-box-shadow: 12px -20px 46px -26px rgba(33,33,33,0.66);
+    }
+    .parrafo_contacto {
+        display: grid;
+        grid-column: 1/6;
+    }
+}
