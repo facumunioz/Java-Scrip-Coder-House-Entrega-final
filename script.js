@@ -1,3 +1,5 @@
+/* Añadir al carrito */
+
 const addToShoppingCartButtons = document.querySelectorAll('.addToCart');
 addToShoppingCartButtons.forEach((addToCartButton) => {
   addToCartButton.addEventListener('click', addToCartClicked);
@@ -25,6 +27,9 @@ function addItemToShoppingCart(itemTitle, itemPrice, itemImage) {
   const elementsTitle = shoppingCartItemsContainer.getElementsByClassName(
     'shoppingCartItemTitle'
   );
+
+  /* No duplicar producto sino sumar al mismo item */
+
   for (let i = 0; i < elementsTitle.length; i++) {
     if (elementsTitle[i].innerText === itemTitle) {
       let elementQuantity = elementsTitle[
@@ -76,6 +81,8 @@ function addItemToShoppingCart(itemTitle, itemPrice, itemImage) {
   updateShoppingCartTotal();
 }
 
+/* Actualiza precio de carrito = Total */
+
 function updateShoppingCartTotal() {
   let total = 0;
   const shoppingCartTotal = document.querySelector('.shoppingCartTotal');
@@ -100,11 +107,15 @@ function updateShoppingCartTotal() {
   shoppingCartTotal.innerHTML = `${total.toFixed(2)}$`;
 }
 
+/* Borrar producto del carrito */
+
 function removeShoppingCartItem(event) {
   const buttonClicked = event.target;
   buttonClicked.closest('.shoppingCartItem').remove();
   updateShoppingCartTotal();
 }
+
+/* Aumentar cantidad de productos seleccionados en el carrito */
 
 function quantityChanged(event) {
   const input = event.target;
@@ -112,7 +123,12 @@ function quantityChanged(event) {
   updateShoppingCartTotal();
 }
 
+/* Gracias por su compra + reinicio de carrito de compras */
+
 function comprarButtonClicked() {
   shoppingCartItemsContainer.innerHTML = '';
   updateShoppingCartTotal();
 }
+
+
+  
