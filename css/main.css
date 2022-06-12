@@ -79,14 +79,14 @@ a {
 @font-face {
   font-family: 'Project Sans';
   src: url("ProjectSans-Medium.eot");
-  src: local("Project Sans Medium"), local("ProjectSans-Medium"), url("ProjectSans-Medium.eot?#iefix") format("embedded-opentype"), url("ProjectSans-Medium.woff2") format("woff2"), url("ProjectSans-Medium.woff") format("woff"), url("ProjectSans-Medium.ttf") format("truetype");
+  src: local("Project Sans Medium"), local("ProjectSans-Medium"), url("ProjectSans-Medium.eot?#iefix") format("embedded-opentype");
   font-weight: 500;
   font-style: normal; }
 
 @font-face {
   font-family: 'Project Sans';
   src: url("ProjectSans-Bold.eot");
-  src: local("Project Sans Bold"), local("ProjectSans-Bold"), url("ProjectSans-Bold.eot?#iefix") format("embedded-opentype"), url("ProjectSans-Bold.woff2") format("woff2"), url("ProjectSans-Bold.woff") format("woff"), url("ProjectSans-Bold.ttf") format("truetype");
+  src: local("Project Sans Bold"), local("ProjectSans-Bold"), url("ProjectSans-Bold.eot?#iefix") format("embedded-opentype");
   font-weight: bold;
   font-style: normal; }
 
@@ -475,7 +475,7 @@ body .envios {
     grid-template-rows: auto 100px;
     justify-content: center; } }
 
-body {
+/* body { */
   /*     .cart-btn {
         display: flex;
         justify-content: flex-end;
@@ -501,7 +501,7 @@ body {
         font-weight: bolder;
     } */
   /* ? SHOPPING CART */
-  /*Fin */ }
+  /*Fin */ 
   body .medidas {
     width: 100%;
     font-size: 15px;

@@ -15,15 +15,14 @@ const shoppingCartItemsContainer = document.querySelector(
 function addToCartClicked(event) {
   const button = event.target;
   const item = button.closest('.item');
-
   const itemTitle = item.querySelector('.item-title').textContent;
   const itemPrice = item.querySelector('.item-price').textContent;
   const itemImage = item.querySelector('.item-image').src;
 
-  addItemToShoppingCart(itemTitle, itemPrice, itemImage);
+  addItemToShoppingCart(true, itemTitle, itemPrice, itemImage);
 }
 
-function addItemToShoppingCart(itemTitle, itemPrice, itemImage) {
+function addItemToShoppingCart(isEvent, itemTitle, itemPrice, itemImage, itemQuantity) {
   const elementsTitle = shoppingCartItemsContainer.getElementsByClassName(
     'shoppingCartItemTitle'
   );
@@ -40,6 +39,9 @@ function addItemToShoppingCart(itemTitle, itemPrice, itemImage) {
       elementQuantity.value++;
       $('.toast').toast('show');
       updateShoppingCartTotal();
+      if (isEvent){
+        guardarStorage(itemTitle, itemPrice, itemImage)
+      }
       return;
     }
   }
@@ -62,7 +64,7 @@ function addItemToShoppingCart(itemTitle, itemPrice, itemImage) {
             <div
                 class="shopping-cart-quantity d-flex justify-content-between align-items-center h-100 border-bottom pb-2 pt-3">
                 <input class="shopping-cart-quantity-input shoppingCartItemQuantity" type="number"
-                    value="1">
+                    value="${itemQuantity ? itemQuantity : 1}">
                 <button class="btn btn-danger buttonDelete" type="button">X</button>
             </div>
         </div>
@@ -77,6 +79,10 @@ function addItemToShoppingCart(itemTitle, itemPrice, itemImage) {
   shoppingCartRow
     .querySelector('.shoppingCartItemQuantity')
     .addEventListener('change', quantityChanged);
+    
+    if (isEvent){
+      guardarStorage(itemTitle, itemPrice, itemImage)
+    }
 
   updateShoppingCartTotal();
 }
@@ -111,6 +117,7 @@ function updateShoppingCartTotal() {
 
 function removeShoppingCartItem(event) {
   const buttonClicked = event.target;
+  removerStorage(buttonClicked.closest('.shoppingCartItem').querySelector("h6").innerText);
   buttonClicked.closest('.shoppingCartItem').remove();
   updateShoppingCartTotal();
 }
@@ -120,6 +127,7 @@ function removeShoppingCartItem(event) {
 function quantityChanged(event) {
   const input = event.target;
   input.value <= 0 ? (input.value = 1) : null;
+  guardarStorage(input.parentElement.parentElement.parentElement.querySelector("h6").innerText, null, null, input.value);
   updateShoppingCartTotal();
 }
 
@@ -128,7 +136,62 @@ function quantityChanged(event) {
 function comprarButtonClicked() {
   shoppingCartItemsContainer.innerHTML = '';
   updateShoppingCartTotal();
+  localStorage.clear();
+}
+
+/* Local Storage */
+
+function guardarStorage(title, price, image, quantity) {
+  if (verificarStorage("shopingCart")) {
+    const storage = JSON.parse(localStorage.getItem("shopingCart"));
+    for (const i of storage) {
+      console.log("a")
+      if (i.productTitle == title) {
+        i.productQuantity = quantity ? quantity : i.productQuantity +1;
+        console.log(i.productQuantity)
+        localStorage.setItem("shopingCart", JSON.stringify(storage));
+        return
+      }
+    }
+    const product = {
+      productTitle: title,
+      productPrice: price,
+      productImage: image,
+      productQuantity: quantity ? quantity : 1
+    };
+    storage.push(product);
+    localStorage.setItem("shopingCart", JSON.stringify(storage));
+
+  }else{
+    const array = [];
+    localStorage.setItem("shopingCart", JSON.stringify(array));
+    guardarStorage(title, price, image);
+  }
+
+}
+
+function verificarStorage(localItem) {
+  return localStorage.getItem(localItem);
+}
+
+function removerStorage(title){
+  if (verificarStorage("shopingCart")){
+    const storage = JSON.parse(localStorage.getItem("shopingCart"));
+    for (let i= 0; i< storage.length; i ++){
+      if (storage[i].productTitle == title){
+      storage.splice(i,1);
+      }
+    }
+    localStorage.setItem("shopingCart", JSON.stringify(storage));
+  }
+} 
+
+if (verificarStorage("shopingCart")){
+  const products = JSON.parse(localStorage.getItem("shopingCart"));
+  for (const i of products){
+  addItemToShoppingCart (false, i.productTitle, i.productPrice, i.productImage, i.productQuantity);
+  }
+
 }
 
 
-  
